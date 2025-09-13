@@ -1,0 +1,320 @@
+body { overflow-x: hidden; }
+
+.resume-section {
+  background: #fff6f6;
+  padding: 80px 0 40px 0;
+  min-height: 100vh;
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.resume-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 clamp(12px, 5vw, 48px);
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+}
+.resume-header h2 {
+  font-size: clamp(1.6rem, 3vw, 2.5rem);
+  font-weight: 800;
+  color: #2c2c2c;
+}
+.download-btn {
+  background: #1c1c1c;
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.download-btn:hover {
+  background: #333;
+  transform: scale(1.04);
+}
+
+.road-container {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 16px;
+  box-sizing: border-box;
+}
+
+.road-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 100%;
+  background: #000;
+  z-index: 0;
+  border-radius: 40px;
+  overflow: hidden;
+}
+.road-line::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 10px;
+  height: 100%;
+  background: repeating-linear-gradient(to bottom, #ffffff 0 24px, transparent 24px 48px);
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.mario-car {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 160px;
+  z-index: 3;
+  transition: top 0.1s ease-out;
+  pointer-events: none;
+}
+
+.resume-card {
+  position: absolute;
+  width: 500px;
+  display: flex;
+  align-items: flex-start;
+  z-index: 2;
+}
+.resume-card.left {
+  left: calc(50% - 650px);
+  flex-direction: row-reverse;
+  text-align: right;
+}
+.resume-card.right {
+  left: calc(50% + 140px);
+  text-align: left;
+}
+
+.card {
+  background: #fff;
+  border-radius: 22px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+  padding: 36px 40px;
+  margin-bottom: 64px;
+  min-width: 360px;
+  max-width: 500px;
+  width: 100%;
+  position: relative;
+}
+.card h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 6px;
+}
+
+.duration-tag {
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  background: #222;
+  color: #fff;
+  padding: 6px 18px;
+  border-radius: 16px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+.resume-card.left .duration-tag {
+  right: auto;
+  left: 24px;
+}
+
+.card .company { font-weight: 600; color: #444; margin-bottom: 2px; }
+.card .team { font-size: 1rem; color: #888; margin-bottom: 8px; }
+.card ul { margin: 12px 0 0 0; padding-left: 20px; }
+.card li { margin-bottom: 7px; font-size: 1rem; color: #333; line-height: 1.6; }
+
+.connector {
+  position: absolute;
+  top: 50%;
+  width: 60px;
+  height: 8px;
+  background: #222;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+.resume-card.left .connector {
+  left: 100%;
+  border-radius: 0 8px 8px 0;
+}
+.resume-card.right .connector {
+  left: -60px;
+  border-radius: 8px 0 0 8px;
+}
+
+/* Responsive - Tablet */
+@media (max-width: 1024px) {
+  .road-line { width: 90px; }
+  .resume-card.left { left: calc(50% - 560px); }
+  .resume-card.right { left: calc(50% + 110px); }
+  .mario-car { width: 140px; }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 768px) {
+  .resume-header {
+    flex-direction: column;
+    gap: 18px;
+    padding: 0 12px;
+    text-align: center;
+  }
+  .resume-header h2 { font-size: 1.6rem; }
+  .download-btn { font-size: 0.95rem; padding: 10px 16px; }
+
+  .road-container {
+    padding: 40px 16px 80px;
+    max-width: 100%;
+    position: relative;
+  }
+
+  /* Road positioned on the left side */
+  .road-line {
+    position: absolute;
+    left: 60px;
+    top: 0;
+    width: 60px;
+    height: 100%;
+    transform: none;
+    z-index: 0;
+  }
+
+  /* Mario car aligned with the road on left */
+  .mario-car {
+    position: absolute;
+    left: 60px;
+    transform: translateX(-50%);
+    width: 100px;
+    z-index: 3;
+  }
+
+  /* All cards positioned on the right side */
+  .resume-card {
+    position: absolute;
+    width: calc(100% - 140px);
+    left: 140px !important;
+    flex-direction: row;
+    text-align: left;
+    z-index: 2;
+  }
+
+  .resume-card.left,
+  .resume-card.right {
+    left: 140px !important;
+    flex-direction: row;
+    text-align: left;
+  }
+
+  /* Connectors from cards to road */
+  .connector {
+    position: absolute;
+    top: 50%;
+    left: -80px;
+    width: 80px;
+    height: 6px;
+    background: #222;
+    transform: translateY(-50%);
+    z-index: 1;
+    border-radius: 6px 0 0 6px;
+  }
+
+  .resume-card.left .connector,
+  .resume-card.right .connector {
+    left: -80px;
+    width: 80px;
+    border-radius: 6px 0 0 6px;
+  }
+
+  .card {
+    width: 100%;
+    padding: 24px 20px;
+    max-width: 100%;
+    box-sizing: border-box;
+    min-width: auto;
+  }
+
+  /* Reset duration tag position for mobile */
+  .duration-tag {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+  }
+  
+  .resume-card.left .duration-tag {
+    right: 20px;
+    left: auto;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .road-container {
+    padding: 40px 8px 80px;
+  }
+
+  .road-line {
+    left: 40px;
+    width: 40px;
+  }
+
+  .mario-car {
+    left: 40px;
+    width: 80px;
+  }
+
+  .resume-card {
+    width: calc(100% - 100px);
+    left: 100px !important;
+  }
+
+  .resume-card.left,
+  .resume-card.right {
+    left: 100px !important;
+  }
+
+  .connector {
+    left: -60px;
+    width: 60px;
+  }
+
+  .resume-card.left .connector,
+  .resume-card.right .connector {
+    left: -60px;
+    width: 60px;
+  }
+
+  .card {
+    padding: 20px 16px;
+  }
+
+  .card h3 { 
+    font-size: 1.2rem; 
+    margin-bottom: 8px;
+  }
+  
+  .card li { 
+    font-size: 0.9rem; 
+    margin-bottom: 6px;
+  }
+  
+  .duration-tag { 
+    font-size: 0.8rem; 
+    padding: 4px 12px;
+    right: 16px;
+  }
+}
