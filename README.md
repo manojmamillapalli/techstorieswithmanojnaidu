@@ -49,3 +49,11 @@ git merge pre-release
 ## 11. Push the Updated Main Branch
 Push the merged changes to the main branch on GitHub:
 git push
+
+## This will:
+Fetch the latest changes from the main branch on the remote repository.
+Merge those changes into your local main branch.
+git checkout main
+
+## git checkout main
+git pull origin main
