@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+### GITHUB steps
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 1. Initialize Git
+If your project is not already a Git repository, initialize it:
+git init
 
-## Available Scripts
+## 2. Add Files to Staging
+Add all files in your project to the staging area:
+git add .
 
-In the project directory, you can run:
+## 3. Commit Changes
+Commit the staged files with a message:
+git commit -m "Initial commit"
 
-### `npm start`
+## 4. Create a GitHub Repository
+Go to GitHub and create a new repository. Copy the repository URL (e.g., https://github.com/username/repo-name.git).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 5. Add Remote Repository
+Link your local repository to the GitHub repository:
+git remote add origin https://github.com/username/repo-name.git
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 6. Push to GitHub
+Push your code to the main branch (or master if your repository uses it):
+git branch -M main
+git push -u origin main
 
-### `npm test`
+## 7. Create a New Branch
+Run the following command to create a new branch for the release:
+git checkout -b pre-release
+This creates a new branch named pre-release and switches to it.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 8. Push the New Branch to GitHub
+Push the new branch to your remote repository:
+git push -u origin pre-release
+This uploads the pre-release branch to GitHub and sets it as the upstream branch.
 
-### `npm run build`
+## 9. Work on the Pre-Release Branch
+Make changes and commits in the pre-release branch as needed:
+git add .
+git commit -m "Changes for pre-release"
+git push
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 10. Merge Pre-Release into Main
+When the release date arrives and you're ready to merge the pre-release branch into main, switch to the main branch:
+git checkout main
+Then merge the pre-release branch into main:
+git merge pre-release
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 11. Push the Updated Main Branch
+Push the merged changes to the main branch on GitHub:
+git push
