@@ -2,7 +2,7 @@
 
 ## 1. Initialize Git
 If your project is not already a Git repository, initialize it:
-git init
+ git init
 
 ## 2. Add Files to Staging
 Add all files in your project to the staging area:
