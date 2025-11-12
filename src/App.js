@@ -6,6 +6,7 @@ import Resume from "./components/Resume";
 import TechBlog from "./components/TechBlog";
 import HireMe from "./components/HireMe";
 import AdminLogin from "./pages/AdminLogin";
+import Projects from "./components/Projects";
 
 export default function App() {
    return (
@@ -20,6 +21,7 @@ export default function App() {
               <Resume />
               <TechBlog />
               <HireMe />
+              <Projects />
             </>
           }
         />

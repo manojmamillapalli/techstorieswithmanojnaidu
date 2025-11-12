@@ -79,6 +79,17 @@ export default function Navbar() {
               </ScrollLink>
             </li>
             <li>
+              <ScrollLink
+                to="projects"
+                smooth
+                duration={400}
+                offset={-72}
+                onClick={closeMenu}
+              >
+                Projects
+              </ScrollLink>
+            </li>
+            <li>
               <RouterLink to="/admin" onClick={closeMenu}>
                 AdminLogin
               </RouterLink>
