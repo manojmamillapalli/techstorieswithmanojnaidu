@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "techstorieswithmanojnaid-bf686"
-  }
+  },
+  "targets": {
+    "techstorieswithmanojnaid-bf686": {
+      "hosting": {
+        "main": [
+          "techstorieswithmanojnaid-bf686"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }

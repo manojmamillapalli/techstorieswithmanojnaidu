@@ -459,7 +459,7 @@ export default function Resume() {
         <div className="resume-header">
           <h2>Work Experience And Education Timeline View</h2>
           <a
-            href="https://drive.google.com/file/d/153wE54NmTkBiQWU0MdopFeF-IZ2NBY31/view?usp=sharing"
+            href="https://drive.google.com/file/d/1R1q-WVjfOIxUU01RF1gsxPwV_YjB1zUq/view?usp=sharing"
             className="download-btn"
             download
             target="_blank"
